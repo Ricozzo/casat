@@ -53,6 +53,34 @@ In the web app, the focus is to create tolls to do donations, get information ab
 | `POST`     | `/private/payments`               | Private route. Adds a new favorite for the current user.     | {userId, [collectionID]}                                 |
 
 
+
+## Models
+
+User model
+
+```javascript
+{
+  id: String,
+  name: String,
+  email: String,
+  password: String,
+  }
+
+```
+
+Pictures Item model
+
+```javascript
+{
+  id: String,
+  title: String,
+  itemSrc: String,
+  description: String
+  
+}
+
+```
+
 <br>
 
 ## API's
