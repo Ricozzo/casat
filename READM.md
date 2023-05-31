@@ -51,7 +51,7 @@ In the web app, the focus is to create tolls to do donations, get information ab
 | `PUT`      | `/private/edit-profile`            | Private route. Sends edit-profile info to server and updates user in DB. | { name, email, password }                    |
 | `GET`      | `/private/payments`               | Private route. Render the `payments` view.                  | {userId, [collectionID]}                                 |
 | `POST`     | `/private/payments`               | Private route. Adds a new favorite for the current user.     | {userId, [collectionID]}                                 |
-| `DELETE`   | `/private/payments/:collectionId` | Private route. Deletes the existing favorite from the current user. | {userId, [collectionID]}                          |
+
 
 <br>
 
@@ -65,7 +65,8 @@ In the web app, the focus is to create tolls to do donations, get information ab
 
 IronLauncher
 Bootstrap
-UI
+Material / UI
+Toasting
 React-dom
 Vite
 npm install
