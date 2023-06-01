@@ -3,7 +3,7 @@ const router = require('express').Router();
 const mongoose = require('mongoose');
 
 const Event = require('../models/Event.model');
-const Detail = require('../models/Detail.model');
+const Detail = require('../models/Details.model');
 
 
 // POST '/api/details' route to Create a New Detail
