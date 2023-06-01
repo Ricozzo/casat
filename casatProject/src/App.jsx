@@ -8,6 +8,7 @@ import LoginPage from './Pages/Login';
 import SignUpPage from './Pages/Signup';
 import EventDetailsPage from './Pages/Details';
 import EditEventPage from './Pages/EditEvent';
+import Footer from './Components/Footer';
 
 
 
@@ -30,6 +31,9 @@ function App() {
         <Route path='/signup' element={<SignUpPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
       </Routes>
+      <div className="App">
+      <Footer />
+    </div>
     </div>
   )
 }
