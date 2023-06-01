@@ -4,6 +4,11 @@ import {Routes, Route} from 'react-router-dom';
 import HomePage from './Pages/Home'
 import Navbar from './Components/Navbar';
 import AboutUs from './Pages/About';
+import LoginPage from './Pages/Login';
+import SignUpPage from './Pages/Signup';
+import EventDetailsPage from './Pages/Details';
+import EditEventPage from './Pages/EditEvent';
+
 
 
 
@@ -20,7 +25,10 @@ function App() {
         <Route path='/about' element={<AboutUs/>}/>
         <Route path='/donations' element={<Donatinons/>}/>
         <Route path='/events' element={<Events/>}/>
-
+        <Route path='/details' element={<EventDetailsPage/>}/>
+        <Route path='/events/edit/:eventId' element={<EditEventPage/>}/>
+        <Route path='/signup' element={<SignUpPage/>}/>
+        <Route path='/login' element={<LoginPage/>}/>
       </Routes>
     </div>
   )
