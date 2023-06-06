@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import authService from '../Services/auth.services';
-
 // Creates React Context with shareable State data
 const AuthContext = React.createContext();
 
@@ -15,6 +14,8 @@ function AuthProviderWrapper(props) {
     const storeToken = (token) =>{
         localStorage.setItem('authToken', token);
     }
+console.log(storeToken);
+
 
     // Authentication Function 
     const authenticateUser = ()=>{
@@ -60,10 +61,9 @@ function AuthProviderWrapper(props) {
     }, []) 
 
   return (
-    <AuthContext.Provider value={{isLoggedIn, isLoading, user, 
-      storeToken, authenticateUser, logOutUser}}>
-        {props.children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={{ storeToken, authenticateUser, logOutUser, isLoggedIn, isLoading, user }}>
+  {props.children}
+</AuthContext.Provider>
   )
 }
 

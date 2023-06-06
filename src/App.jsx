@@ -1,5 +1,6 @@
 import './App.css'
 import {Routes, Route} from 'react-router-dom';
+import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 
 import HomePage from './Pages/Home'
 import Navbar from './Components/Navbar';
@@ -9,12 +10,6 @@ import SignUpPage from './Pages/Signup';
 import EventDetailsPage from './Pages/Details';
 import EditEventPage from './Pages/EditEvent';
 import Footer from './Components/Footer';
-
-
-
-
-import Donatinons from './Pages/Donations';
-
 import Events from './Pages/Events/Events';
 
 function App() {
@@ -24,7 +19,6 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path='/about' element={<AboutUs/>}/>
-        <Route path='/donations' element={<Donatinons/>}/>
         <Route path='/events' element={<Events/>}/>
         <Route path='/events/edit/:eventId' element={<EditEventPage/>}/>
         <Route path='/events/:eventId' element={<EventDetailsPage/>}/>

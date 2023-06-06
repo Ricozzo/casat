@@ -1,42 +1,59 @@
-import {useState} from 'react';
-import axios from 'axios';
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const API_URL = 'http://localhost:5005';
-
-// STEPS:
-// 1) Create a Form; 
-// 2) Connect the input values with state values; 
-// 3) Create handle functions to handle change of inputs; 
-// 4) Create function that handles form submit 
-// 5) Inside this function, create a post request via Axios. 
+const API_URL = "http://localhost:5005";
 
 function AddEvent(props) {
-  // 2) Write State
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");  
+  const [description, setDescription] = useState("");
+  const [imgUrl, setImgUrl] = useState(""); // Armazena a imagem selecionada
+  const [uploading, setUploading] = useState(false);
 
-  // 4) and 5) Steps
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) =>{
+  const handleImageChange = (e) => {
+    setUploading(true);
+
+    const uploadData = new FormData();
+
+    uploadData.append("imageUrl", e.target.files[0]);
+
+    axios
+      .post(`${import.meta.env.VITE_APP_SERVER_URL}/api/upload`, uploadData)
+      .then((response) => {
+        setImgUrl(response.data.fileUrl);
+        console.log(imgUrl);
+        setUploading(false);
+      })
+      .catch((err) => console.log("Error while uploading the file: ", err));
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const requestBody = {title, description};
+    const body = {
+      title,
+      description,
+      imgUrl,
+    };
 
-    axios.post(`${API_URL}/api/events`, requestBody)
-    .then((response)=>{
+    axios
+      .post(`${API_URL}/api/events`, body)
+      .then((response) => {
         setTitle("");
         setDescription("");
-        props.refreshEvents();
-    })
-    .catch((error)=>console.log(error));
-  }
-
+        setImgUrl("");
+        navigate("/events");
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className="add-event">
       <h3>Add Event</h3>
- 
-      <form onSubmit={handleSubmit}>      
+
+      <form onSubmit={handleSubmit}>
         <label>Title:</label>
         <input
           type="text"
@@ -44,7 +61,6 @@ function AddEvent(props) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
- 
         <label>Description:</label>
         <textarea
           type="text"
@@ -52,11 +68,20 @@ function AddEvent(props) {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
- 
-        <button type="submit">Submit</button>
+
+        <label>Image:</label>
+        <input
+          type="file"
+          onChange={(e) => handleImageChange(e)} // Chame a função handleImageChange para atualizar a imagem selecionada
+        />
+        {uploading ? (
+          <p>Image Uploading, please wait</p>
+        ) : (
+          <button type="submit">Submit</button>
+        )}
       </form>
     </div>
-  )
+  );
 }
 
-export default AddEvent
+export default AddEvent;
