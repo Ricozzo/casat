@@ -8,7 +8,7 @@ function HomePage() {
       <div>
         <h1>QueerLink</h1>
         <h3>Connecting Queer Communities</h3>
-        <div>
+        <div className="carousel">
           <Carousel style={{ marginWidth: "50%" }} interval={2000}>
             <Carousel.Item>
               <img className="d-block w-100" src={marshaP} alt="First slide" />
@@ -73,6 +73,9 @@ function HomePage() {
             brighter future for all.
           </p>
         </div>
+      </div>
+      <div>
+        <h1>Find us</h1>
       </div>
       <div className="mapouter">
         <div className="gmap_canvas">
