@@ -29,6 +29,9 @@ function Navbar() {
           <Link to="/events">
             <button>Events</button>
           </Link>
+          <Link to="/logout">
+            <button>Logout</button>
+          </Link>
         </div>
       </div>
     </nav>

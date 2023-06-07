@@ -8,6 +8,14 @@ function HomePage() {
       <div>
         <h1>QueerLink</h1>
         <h3>Connecting Queer Communities</h3>
+
+        <div className="bordersPage">
+          <p>
+            QueerLink is a dynamic and inclusive LGBTQ+ organization that aims
+            to empower queer individuals and foster a supportive community. Our
+            primary focus is to provide valuable information and resources
+            related to exams, queer events, and LGBTQ+ history.
+          </p>
         <div className="carousel">
           <Carousel style={{ marginWidth: "50%" }} interval={2000}>
             <Carousel.Item>
@@ -25,14 +33,6 @@ function HomePage() {
             </Carousel.Item>
           </Carousel>
         </div>
-
-        <div className="bordersPage">
-          <p>
-            QueerLink is a dynamic and inclusive LGBTQ+ organization that aims
-            to empower queer individuals and foster a supportive community. Our
-            primary focus is to provide valuable information and resources
-            related to exams, queer events, and LGBTQ+ history.
-          </p>
           <p>
             At QueerLink, we recognize the unique challenges faced by queer
             individuals in navigating academic pursuits, including exams, and we
