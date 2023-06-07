@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import QueerLink from "../../assets/QueerLink.png"
+import QueerLink from "../../assets/queerLink.png"
 import {AuthContext} from "../../Context/auth.context"
 
 function Navbar() {
