@@ -1,5 +1,5 @@
 import { Carousel } from "react-bootstrap";
-import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
+import Marsha from "../../../public/marshaP.jpg"
 
 function HomePage() {
   return (
@@ -12,21 +12,21 @@ function HomePage() {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="public\marsha3.jpg"
+                src={Marsha}
                 alt="First slide"
               />
             </Carousel.Item>
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="public\marshaP.jpg"
+                src={Marsha}
                 alt="Second slide"
               />
             </Carousel.Item>
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="public\marshaP.jpg"
+                src={Marsha}
                 alt="Third slide"
               />
             </Carousel.Item>
