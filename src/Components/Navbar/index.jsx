@@ -16,7 +16,9 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <img src={QueerLink} alt="Bootstrap" width="35" height="35"/>
+      <a href="/">
+        <img src={QueerLink} alt="Bootstrap" width="35" height="35" />
+      </a>
       <div>
         <button
           className={`menu-button ${showOptions ? "active" : ""}`}
@@ -28,31 +30,34 @@ function Navbar() {
           <Link to="/">
             <button>Home</button>
           </Link>
-          { isLoggedIn ? (
+          {isLoggedIn ? (
             <>
-            <Link to="/about">
-            <button>History</button>
-          </Link>
-          <Link to="/events">
-            <button>Events</button>
-          </Link>
-           
-            <button onClick={() => {logoutUser(); navigate("/")}}>Logout</button>
- 
-          </>
+              <Link to="/depositions">
+                <button>Depositions</button>
+              </Link>
+              <Link to="/events">
+                <button>Events</button>
+              </Link>
+
+              <button
+                onClick={() => {
+                  logoutUser();
+                  navigate("/");
+                }}
+              >
+                Logout
+              </button>
+            </>
           ) : (
             <>
-            <Link to="/login">
-            <button>Login</button>
-          </Link>
-          <Link to="/signup">
-            <button>Signup</button>
-          </Link>
-          </>
+              <Link to="/login">
+                <button>Login</button>
+              </Link>
+              <Link to="/signup">
+                <button>Signup</button>
+              </Link>
+            </>
           )}
-
-    
-
         </div>
       </div>
     </nav>

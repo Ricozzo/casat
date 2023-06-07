@@ -78,13 +78,11 @@ button:focus-visible {
   align-items: center;
   justify-content: space-evenly;
   background-color:#e5a9c9;
-  position: absolute;
   color: white;
   bottom: 0;
   width: 100%;
   height: 20%;
   line-height: 100px;
-  position: fixed;
 }
 
 /* .footer p {
