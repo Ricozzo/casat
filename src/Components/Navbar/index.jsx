@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import QueerLink from "../../assets/QueerLink.png"
 
 function Navbar() {
   const [showOptions, setShowOptions] = useState(false);
@@ -9,23 +10,27 @@ function Navbar() {
   };
 
   return (
-    <nav className='navbar'>
+    <nav className="navbar">
+      <img src={QueerLink} alt="Bootstrap" width="35" height="35"/>
       <div>
         <button
-          className={showOptions ? 'active' : ''}
+          className={`menu-button ${showOptions ? "active" : ""}`}
           onClick={handleToggleOptions}
         >
-          {showOptions ? 'Menu' : 'Menu'}
+          Menu
         </button>
-        <div className={`options ${showOptions ? 'show' : ''}`}>
+        <div className={`options ${showOptions ? "show" : ""}`}>
           <Link to="/">
             <button>Home</button>
           </Link>
           <Link to="/about">
-            <button>About Us</button>
+            <button>History</button>
           </Link>
           <Link to="/events">
             <button>Events</button>
+          </Link>
+          <Link to="/logout">
+            <button>Logout</button>
           </Link>
         </div>
       </div>

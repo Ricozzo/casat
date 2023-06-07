@@ -1,5 +1,6 @@
 import { Carousel } from "react-bootstrap";
-import Marsha from "../../../public/marshaP.jpg"
+import marshaP from "../../assets/marshaP.jpg";
+import marshaP3 from "../../assets/marsha3.jpg";
 
 function HomePage() {
   return (
@@ -7,39 +8,30 @@ function HomePage() {
       <div>
         <h1>QueerLink</h1>
         <h3>Connecting Queer Communities</h3>
-        <div>
-          <Carousel style={{ marginwidth: "50%" }} interval={2000}>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={Marsha}
-                alt="First slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={Marsha}
-                alt="Second slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={Marsha}
-                alt="Third slide"
-              />
-            </Carousel.Item>
-          </Carousel>
-        </div>
         <div className="bordersPage">
           <p>
-            {" "}
             QueerLink is a dynamic and inclusive LGBTQ+ organization that aims
             to empower queer individuals and foster a supportive community. Our
             primary focus is to provide valuable information and resources
             related to exams, queer events, and LGBTQ+ history.
           </p>
+        <div className="carousel">
+          <Carousel style={{ marginWidth: "50%" }} interval={2000}>
+            <Carousel.Item>
+              <img className="d-block w-100" src={marshaP} alt="First slide" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={marshaP3}
+                alt="Second slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="d-block w-100" src={marshaP} alt="Third slide" />
+            </Carousel.Item>
+          </Carousel>
+        </div>
           <p>
             At QueerLink, we recognize the unique challenges faced by queer
             individuals in navigating academic pursuits, including exams, and we
@@ -81,6 +73,9 @@ function HomePage() {
           </p>
         </div>
       </div>
+      <div>
+        <h1>Find us</h1>
+      </div>
       <div className="mapouter">
         <div className="gmap_canvas">
           <iframe
@@ -88,10 +83,10 @@ function HomePage() {
             height="338"
             id="gmap_canvas"
             src="https://maps.google.com/maps?q=ironhack&t=&z=16&ie=UTF8&iwloc=&output=embed"
-            frameborder="0"
+            frameBorder="0"
             scrolling="no"
-            marginheight="0"
-            marginwidth="0"
+            marginHeight="0"
+            marginWidth="0"
           ></iframe>
           <a href="https://2yu.co">2yu</a>
           <br />

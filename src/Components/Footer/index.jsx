@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import instaLogo from "../../../public/insta.png";
-import faceLogo from "../../../public/facebook.png";
+import instaLogo from "../../assets/insta.png";
+import faceLogo from "../../assets/facebook.png";
 
 const Footer = () => {
   const [showFooter, setShowFooter] = useState(false);
@@ -50,4 +50,3 @@ const Footer = () => {
 };
 
 export default Footer;
- 

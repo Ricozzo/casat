@@ -11,25 +11,35 @@ import EventDetailsPage from './Pages/Details';
 import EditEventPage from './Pages/EditEvent';
 import Footer from './Components/Footer';
 import Events from './Pages/Events/Events';
+import { Logout } from '@mui/icons-material';
+import IsAnon from './Components/isAnon';
+import IsPrivate from './Components/isPrivate';
 
 function App() {
   return (
     <div className="App">
-    <Navbar/>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path='/about' element={<AboutUs/>}/>
-        <Route path='/events' element={<Events/>}/>
-        <Route path='/events/edit/:eventId' element={<EditEventPage/>}/>
-        <Route path='/events/:eventId' element={<EventDetailsPage/>}/>
-        <Route path='/signup' element={<SignUpPage/>}/>
-        <Route path='/login' element={<LoginPage/>}/>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/events" element={<Events />} />
+        <Route
+          path="/events/edit/:eventId"
+          element={
+            <IsPrivate>
+              <EditEventPage />
+            </IsPrivate>
+          }
+        />
+        <Route path="/events/:eventId" element={<EventDetailsPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
       <div className="App">
-      <Footer />
+        <Footer />
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
 export default App

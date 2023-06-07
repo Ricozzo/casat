@@ -10,10 +10,10 @@ function LogInPage() {
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
-console.log(navigate)
+
   //destructuring the authContext Object
   const { storeToken, authenticateUser } = useContext(AuthContext);
-console.log("here")
+
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
@@ -31,8 +31,7 @@ console.log("here")
         navigate(`/`);
       })
       .catch((error) => {
-        const errorDescription = error.response.data.message;
-        setErrorMessage(errorDescription);
+        console.log(error);
       });
   };
 
@@ -56,7 +55,7 @@ console.log("here")
         <br></br>
         <button type="submit">Login</button>
       </form>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {/*       {errorMessage && <p className="error-message">{errorMessage}</p>} */}
 
       <p>Don't have an account yet?</p>
       <Link to={"/signup"}> Sign Up</Link>
