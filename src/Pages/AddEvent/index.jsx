@@ -2,51 +2,51 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5005";
-
-function AddEvent(props) {
+function AddEvent({ getAllEvents }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [imgUrl, setImgUrl] = useState(""); // Armazena a imagem selecionada
   const [uploading, setUploading] = useState(false);
+  const [eventImage, seteventImage] = useState("");
 
   const navigate = useNavigate();
 
-  const handleImageChange = (e) => {
-    setUploading(true);
+  const handleImageChange = async (e) => {
+    try {
+      setUploading(true);
+      const uploadData = new FormData();
+      uploadData.append("imageUrl", e.target.files[0]);
 
-    const uploadData = new FormData();
+      const response = await axios.post(
+        `${import.meta.env.VITE_APP_SERVER_URL}/api/upload`,
+        uploadData
+      );
 
-    uploadData.append("imageUrl", e.target.files[0]);
-
-    axios
-      .post(`${import.meta.env.VITE_APP_SERVER_URL}/api/upload`, uploadData)
-      .then((response) => {
-        setImgUrl(response.data.fileUrl);
-        console.log(imgUrl);
-        setUploading(false);
-      })
-      .catch((err) => console.log("Error while uploading the file: ", err));
+      seteventImage(response.data.fileUrl);
+      setUploading(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const body = {
-      title,
-      description,
-      imgUrl,
-    };
-
-    axios
-      .post(`${API_URL}/api/events`, body)
-      .then((response) => {
-        setTitle("");
-        setDescription("");
-        setImgUrl("");
-        navigate("/events");
-      })
-      .catch((error) => console.log(error));
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const body = {
+        title,
+        description,
+        imageUrl: eventImage,
+      };
+      await axios.post(
+        `${import.meta.env.VITE_APP_SERVER_URL}/api/events`,
+        body
+      );
+      getAllEvents();
+      setTitle("");
+      setDescription("");
+      seteventImage("");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

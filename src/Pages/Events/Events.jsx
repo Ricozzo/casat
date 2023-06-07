@@ -22,14 +22,14 @@ function EventsListPage() {
 
   return (
     <div className="event-list-page">
-      <AddEvent refreshEvents={getAllEvents} />
+      <AddEvent getAllEvents={getAllEvents} />
       <div className="event-card-container">
         {events.map((event) => (
           <div className="event-card" key={event._id}>
             <Link to={`/events/${event._id}`}>
               <div className="event-content">
                 <div className="event-image">
-                  <img src={event.imgUrl} alt="" className="event-image" />
+                  <img src={event.imageUrl} alt="" className="event-image" />
                 </div>
                 <div className="event-details">
                   <h3 className="event-title">{event.title}</h3>
