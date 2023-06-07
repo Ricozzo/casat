@@ -1,9 +1,14 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import QueerLink from "../../assets/QueerLink.png"
+import {AuthContext} from "../../Context/auth.context"
 
 function Navbar() {
   const [showOptions, setShowOptions] = useState(false);
+  const {user, logoutUser, isLoggedIn} = useContext(AuthContext)
+
+  const navigate = useNavigate()
 
   const handleToggleOptions = () => {
     setShowOptions(!showOptions);
@@ -23,15 +28,31 @@ function Navbar() {
           <Link to="/">
             <button>Home</button>
           </Link>
-          <Link to="/about">
+          { isLoggedIn ? (
+            <>
+            <Link to="/about">
             <button>History</button>
           </Link>
           <Link to="/events">
             <button>Events</button>
           </Link>
-          <Link to="/logout">
-            <button>Logout</button>
+           
+            <button onClick={() => {logoutUser(); navigate("/")}}>Logout</button>
+ 
+          </>
+          ) : (
+            <>
+            <Link to="/login">
+            <button>Login</button>
           </Link>
+          <Link to="/signup">
+            <button>Signup</button>
+          </Link>
+          </>
+          )}
+
+    
+
         </div>
       </div>
     </nav>

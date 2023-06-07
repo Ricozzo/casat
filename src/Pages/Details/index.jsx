@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../Context/auth.context";
+
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
@@ -7,6 +9,14 @@ const API_URL = "http://localhost:5005";
 function EventDetailsPage() {
   const [event, setEvent] = useState(null);
   const { eventId } = useParams();
+
+  const {user} = useContext(AuthContext)
+  const [isAdmin, setisAdmin] = useState(false)
+  const checkAdmin = () => {
+    if (user.email === "admin@admin.com"){
+      setisAdmin(true)
+    }
+  }
 
   const getEvent = () => {
     axios
@@ -20,6 +30,7 @@ function EventDetailsPage() {
 
   useEffect(() => {
     getEvent();
+    checkAdmin()
   }, []); // Empty dependency array to run the effect only once after initial render
 
   return (
@@ -28,13 +39,16 @@ function EventDetailsPage() {
         <div>
           <h1>{event.title}</h1>
           <p>{event.description}</p>
-          <img src={event.imgUrl} alt={event.title} />
+          <img src={event.imageUrl} alt={event.title} />
         </div>
       )}
+
+{isAdmin && (
 
       <Link to={`/events/edit/${eventId}`}>
         <button>Edit Event</button>
       </Link>
+)}
 
       <div className="mapouter">
         <div className="gmap_canvas">

@@ -1,4 +1,8 @@
-import { useState, useEffect } from "react";
+//CHECK IF USER IS ADMIN
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../Context/auth.context";
+//
+
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -16,13 +20,28 @@ function EventsListPage() {
       .catch((error) => console.log(error));
   };
 
+  //CHECK IF USER IS ADMIN
+  const {user} = useContext(AuthContext)
+  const [isAdmin, setisAdmin] = useState(false)
+  const checkAdmin = () => {
+    if (user.email === "admin@admin.com"){
+      setisAdmin(true)
+    }
+  }
+  
   useEffect(() => {
     getAllEvents();
+    checkAdmin()
   }, []);
+  //
 
   return (
     <div className="event-list-page">
+    {/* CHECK IF USER IS ADMIN */}
+    { isAdmin && (
       <AddEvent getAllEvents={getAllEvents} />
+    )}
+    {/*------------------------*/}
       <div className="event-card-container">
         {events.map((event) => (
           <div className="event-card" key={event._id}>
