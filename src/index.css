@@ -33,10 +33,39 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 6.2em;
   line-height: 1.1;
-  color: pink;
+  color: white;
 }
+
+h3 {
+  font-size: 2.2em;
+  line-height: 1.1;
+  color: white;
+}
+
+.fontposition {
+  position: absolute;
+  top: 150%;
+  left: 20%; 
+  transform: translate(-50%, -50%); /* centraliza o elemento */
+}
+
+.textbold {
+  font-size: 18px;
+}
+
+.firstp {
+  width: 450px;
+}
+
+.imagefirstp img {
+  position: absolute;
+  top: 150%;
+  left: 20%; 
+  transform: translate(-50%, -50%); /* centraliza o elemento */
+}
+
 
 button {
   border-radius: 8px;

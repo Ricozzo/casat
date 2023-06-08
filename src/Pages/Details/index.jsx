@@ -4,7 +4,7 @@ import { AuthContext } from "../../Context/auth.context";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
-const marginWidth = import.meta.env.VITE_APP_SERVER_URL;
+const API_URL = import.meta.env.VITE_APP_SERVER_URL;
 
 function EventDetailsPage() {
   const [event, setEvent] = useState(null);

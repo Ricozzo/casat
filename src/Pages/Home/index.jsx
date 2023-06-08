@@ -7,53 +7,34 @@ function HomePage() {
     <div>
       <div>
         <div className="backgroundtop">
-          <h1>QueerLink</h1>
-          <h3>Connecting Queer Communities</h3>
+          <div className="fontposition">
+            <h1>QueerLink</h1>
+            <h3>Connecting Queer Communities</h3>
+          </div>
         </div>
         <div className="bordersPage">
           <p>
-            QueerLink is a dynamic and inclusive LGBTQ+ organization that aims
-            to empower queer individuals and foster a supportive community. Our
-            primary focus is to provide valuable information and resources
+            <b className="textbold">
+              QueerLink is a dynamic and inclusive LGBTQ+ organization that aims
+              to empower queer individuals and foster a supportive community.
+            </b>{" "}
+            Our primary focus is to provide valuable information and resources
             related to exams, queer events, and LGBTQ+ history.
           </p>
-          <div className="carousel">
-            <Carousel style={{ marginWidth: "50%" }} interval={2000}>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src={marshaP}
-                  alt="First slide"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src={marshaP3}
-                  alt="Second slide"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src={marshaP}
-                  alt="Third slide"
-                />
-              </Carousel.Item>
-            </Carousel>
+          <div>
+            <p className="firstp">
+              At QueerLink, we recognize the unique challenges faced by queer
+              individuals in navigating academic pursuits, including exams, and
+              we strive to create an inclusive environment where everyone feels
+              supported. Our team of dedicated volunteers works diligently to
+              compile relevant study materials, share effective exam preparation
+              strategies, and offer guidance on exam-related concerns.
+            </p>
+            <p className="imagefisrtp">
+              <img src={marshaP3} />
+            </p>
           </div>
-          <p>
-            At QueerLink, we recognize the unique challenges faced by queer
-            individuals in navigating academic pursuits, including exams, and we
-            strive to create an inclusive environment where everyone feels
-            supported. Our team of dedicated volunteers works diligently to
-            compile relevant study materials, share effective exam preparation
-            strategies, and offer guidance on exam-related concerns. We believe
-            that education is a powerful tool for personal growth and societal
-            change, and we are committed to ensuring equal opportunities for
-            queer individuals in their educational journey.
-          </p>
-          <p>
+          <p className="secondp">
             In addition to our exam-related initiatives, QueerLink is also
             deeply passionate about fostering a vibrant queer community. We
             organize and promote a wide range of queer events, including social
