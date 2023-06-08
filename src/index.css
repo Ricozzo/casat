@@ -47,7 +47,7 @@ h3 {
 .fontposition {
   position: absolute;
   top: 150%;
-  left: 20%; 
+  left: 20%;
   transform: translate(-50%, -50%); /* centraliza o elemento */
 }
 
@@ -62,10 +62,9 @@ h3 {
 .imagefirstp img {
   position: absolute;
   top: 150%;
-  left: 20%; 
+  left: 20%;
   transform: translate(-50%, -50%); /* centraliza o elemento */
 }
-
 
 button {
   border-radius: 8px;
@@ -100,7 +99,7 @@ button:focus-visible {
 }
 
 .backgroundtop {
-  background-image: url("../../casat/src/assets/marsha3.jpg");
+  background-image: url("./assets/marsha3.jpg");
   height: 650px;
 }
 
