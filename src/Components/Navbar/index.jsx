@@ -25,9 +25,6 @@ function Navbar() {
         </Link>
         {isLoggedIn ? (
           <>
-            <Link to="/depositions">
-              <button className="buttonNav">Forum</button>
-            </Link>
             <Link to="/events">
               <button className="buttonNav">Events</button>
             </Link>

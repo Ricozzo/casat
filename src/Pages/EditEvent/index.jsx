@@ -102,12 +102,6 @@ function EditEventPage() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <label>Information:</label>
-        <textarea
-          name="information"
-          value={information}
-          onChange={(e) => setInformation(e.target.value)}
-        />
 
         <button type="submit">Edit</button>
       </form>

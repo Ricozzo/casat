@@ -72,13 +72,6 @@ function AddEvent({ getAllEvents }) {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
-          <label>Information:</label>
-          <textarea
-            type="text"
-            name="information"
-            value={information}
-            onChange={(e) => setInformation(e.target.value)}
-          />
 
           <label>Image:</label>
           <input

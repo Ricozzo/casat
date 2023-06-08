@@ -39,7 +39,6 @@ function EventDetailsPage() {
         <div className="perEvent">
           <h1 className="titleEvent">{event.title}</h1>
           <p>{event.description}</p>
-          <p>{event.information}</p>
           <img src={event.imageUrl} alt={event.title} />
         </div>
       )}

@@ -4,7 +4,6 @@ import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react'
 
 import HomePage from './Pages/Home'
 import Navbar from './Components/Navbar';
-import Depositions from './Pages/Depositions';
 import LoginPage from './Pages/Login';
 import SignUpPage from './Pages/Signup';
 import EventDetailsPage from './Pages/Details';
@@ -21,7 +20,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/depositions" element={<Depositions />} />
         <Route path="/events" element={<Events />} />
         <Route
           path="/events/edit/:eventId"
