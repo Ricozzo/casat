@@ -38,15 +38,25 @@ h1 {
   color: white;
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 0px;
+  font-size: 50px;
+}
+
 h3 {
   font-size: 2.2em;
   line-height: 1.1;
   color: white;
 }
 
+p {
+  margin-top: 50px;
+}
+
 .fontposition {
   position: absolute;
-  top: 150%;
+  top: 80%;
   left: 20%;
   transform: translate(-50%, -50%); /* centraliza o elemento */
 }
@@ -57,13 +67,38 @@ h3 {
 
 .firstp {
   width: 450px;
+  margin-right: 20px; /* ajuste este valor conforme necessário */
 }
 
-.imagefirstp img {
-  position: absolute;
-  top: 150%;
-  left: 20%;
-  transform: translate(-50%, -50%); /* centraliza o elemento */
+.firstpara {
+  display: flex;
+  flex-direction: row;
+}
+
+.imagefisrtp {
+  margin-left: 80px; /* ajuste este valor conforme necessário */
+}
+
+.imagefisrtp img {
+  border-radius: 50%;
+}
+
+.secondtp {
+  width: 450px;
+  margin-right: 20px; /* ajuste este valor conforme necessário */
+}
+
+.secondpara {
+  display: flex;
+  flex-direction: row;
+}
+
+.imagesecondp {
+  margin-right: 80px; /* ajuste este valor conforme necessário */
+}
+
+.imagesecondp img {
+  border-radius: 50%;
 }
 
 button {
@@ -99,8 +134,43 @@ button:focus-visible {
 }
 
 .backgroundtop {
-  background-image: url("./assets/marsha3.jpg");
+  background-image: url("./assets/bakcgroundImage.jpg");
   height: 650px;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.bottompart {
+  display: flex;
+  flex-direction: row;
+  background-color: #747bff;
+}
+
+.topofbottom {
+  background-color: #747bff;
+}
+
+.informations {
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+
+.mapouter {
+  margin-left: 270px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.meet {
+  color: white;
+}
+
+.informationsP {
+  margin-top: 30px;
+  margin-left: 350px;
+  text-align: center;
+  color: white;
 }
 
 /* -------------------------------------------   Footer   ------------------------------------------ */
@@ -114,7 +184,7 @@ button:focus-visible {
   color: white;
   bottom: 0;
   width: 100%;
-  height: 20%;
+  height: 0%;
   line-height: 100px;
 }
 
@@ -122,13 +192,21 @@ button:focus-visible {
   margin: 0;
 } */
 
-.logoOne {
-  margin-top: 100px;
-  margin-right: 50px;
+.contactsfooter {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  text-align: center;
+  margin-top: 10px;
 }
 
-.logoTwo {
-  margin-top: 200px;
+.logosFooter {
+  display: flex;
+  flex-direction: row;
+}
+
+.logosFooter img {
+  margin-right: 100px;
 }
 
 /* -------------------------------------------   Navbar   ------------------------------------------ */
@@ -139,17 +217,17 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /*  background: linear-gradient(45deg, #ff6b6b, #a831d1, #3c8dbc); */
+  background: linear-gradient(45deg, #ff6b6b, #a831d1, #3c8dbc);
   background-size: 600% 600%;
   color: white;
   height: 70px;
   padding: 0 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  /*   animation: gradientAnimation 10s ease infinite; */
-  background-color: transparent;
+  animation: gradientAnimation 10s ease infinite;
+  /* background-color: transparent; */
 }
 
-/* @keyframes gradientAnimation {
+@keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
   }
@@ -159,7 +237,7 @@ button:focus-visible {
   100% {
     background-position: 0% 50%;
   }
-} */
+}
 
 .menu-button {
   background-color: #e5a9c9;
@@ -172,44 +250,8 @@ button:focus-visible {
   transition: background-color 0.3s ease;
 }
 
-.menu-button:hover {
-  background-color: #d384ab;
-}
-
-.active {
-  background-color: #d384ab;
-}
-
-.options {
-  opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+.navbar__options {
   display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.options button {
-  background-color: transparent;
-  border: none;
-  color: #333;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.options button:hover {
-  background-color: #f5f5f5;
 }
 
 .navbar img {
@@ -217,33 +259,18 @@ button:focus-visible {
   height: 40px; /* Altura da imagem */
   width: auto; /* Largura automática para manter a proporção */
 }
-/* -------------------------------------------   Background Video   ------------------------------------------ */
 
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
+.logoNav {
+  margin-top: 15px;
+  margin-right: 100px;
 }
 
-.video-background video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.options {
+  margin-top: -65px;
 }
 
-.content {
-  position: relative;
-  z-index: 1;
-  color: black;
-  text-align: center;
-  padding: 50px;
+.buttonNav {
+  color: white;
 }
 
 /* -------------------------------------------   Events   ------------------------------------------ */
@@ -297,6 +324,7 @@ button:focus-visible {
 .bordersPage {
   padding-left: 20%;
   padding-right: 20%;
+  margin-top: 50px;
 }
 
 .carousel {

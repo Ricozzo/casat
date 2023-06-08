@@ -1,6 +1,6 @@
 import { Carousel } from "react-bootstrap";
-import marshaP from "../../assets/marshaP.jpg";
-import marshaP3 from "../../assets/marsha3.jpg";
+import circuloOne from "../../assets/circulo1.jpg";
+import circuloTwo from "../../assets/circulo2.jpg";
 
 function HomePage() {
   return (
@@ -15,79 +15,73 @@ function HomePage() {
         <div className="bordersPage">
           <p>
             <b className="textbold">
-              QueerLink is a dynamic and inclusive LGBTQ+ organization that aims
-              to empower queer individuals and foster a supportive community.
+              QueerLink is an inclusive community where queer people can
+              connect, share experiences, and build supportive networks.
             </b>{" "}
-            Our primary focus is to provide valuable information and resources
-            related to exams, queer events, and LGBTQ+ history.
+            Our goal is to create a space where queer people can have a sense of
+            belonging and work together to address the unique challenges our
+            community faces.
           </p>
-          <div>
+          <div className="firstpara">
             <p className="firstp">
-              At QueerLink, we recognize the unique challenges faced by queer
-              individuals in navigating academic pursuits, including exams, and
-              we strive to create an inclusive environment where everyone feels
-              supported. Our team of dedicated volunteers works diligently to
-              compile relevant study materials, share effective exam preparation
-              strategies, and offer guidance on exam-related concerns.
+              Every week, we offer a wide range of queer events, including
+              social gatherings, workshops, panel discussions, and cultural
+              celebrations. We also create engaging content, educational
+              resources, and interactive sessions that focus on LGBTQ+ history.
+              We believe that understanding and appreciating our past is crucial
+              for creating a more inclusive future.
             </p>
             <p className="imagefisrtp">
-              <img src={marshaP3} />
+              <img src={circuloOne} width="230" height="230" />
             </p>
           </div>
-          <p className="secondp">
-            In addition to our exam-related initiatives, QueerLink is also
-            deeply passionate about fostering a vibrant queer community. We
-            organize and promote a wide range of queer events, including social
-            gatherings, workshops, panel discussions, and cultural celebrations.
-            By creating spaces where queer individuals can connect, share
-            experiences, and build supportive networks, we aim to strengthen the
-            bonds within the community and promote a sense of belonging.
-          </p>
-          <p>
-            Another important aspect of our organization is the focus on LGBTQ+
-            history. We firmly believe that understanding and appreciating our
-            past is crucial for creating a more inclusive future. Through
-            engaging content, educational resources, and interactive sessions,
-            QueerLink strives to highlight the significant contributions,
-            struggles, and achievements of queer individuals throughout history.
-            By sharing these stories, we aim to foster a sense of pride,
-            resilience, and empowerment among our community members.
-          </p>
-          <p>
-            QueerLink welcomes individuals of all gender identities, sexual
-            orientations, and backgrounds. We actively encourage participation
-            from allies, as we believe that collective support is instrumental
-            in creating a more inclusive society. Join us on our journey to
-            promote equality, education, and celebration within the queer
-            community. Together, we can make a lasting impact and shape a
-            brighter future for all.
-          </p>
+          <div className="secondpara">
+            <p className="imagesecondp">
+              <img src={circuloTwo} width="230" height="230" />
+            </p>
+            <p className="secondp">
+              QueerLink welcomes individuals of all gender identities, sexual
+              orientations, and backgrounds. We actively encourage participation
+              from allies, as we believe that collective support is crucial to
+              building a more just and open society. If you are interested in
+              making a lasting impact and shaping a brighter future for all,
+              please reach out! We'd love to meet you.
+            </p>
+          </div>
         </div>
       </div>
-      <div>
-        <h1>Find us</h1>
+      <div className="topofbottom">
+        <h2 className="meet">We'd love to meet you</h2>
       </div>
-      <div className="mapouter">
-        <div className="gmap_canvas">
-          <iframe
-            width="100%"
-            height="338"
-            id="gmap_canvas"
-            src="https://maps.google.com/maps?q=ironhack&t=&z=16&ie=UTF8&iwloc=&output=embed"
-            frameBorder="0"
-            scrolling="no"
-            marginHeight="0"
-            marginWidth="0"
-          ></iframe>
-          <a href="https://2yu.co">2yu</a>
-          <br />
-          <style>
-            {`.mapouter { position: relative; text-align: right; height: 338px; width: 100%; }`}
-          </style>
-          <a href="https://embedgooglemap.2yu.co">html embed google map</a>
-          <style>
-            {`.gmap_canvas { overflow: hidden; background: none!important; height: 338px; width: 100%; }`}
-          </style>
+      <div className="bottompart">
+        <div className="mapouter">
+          <div className="gmap_canvas">
+            <iframe
+              width="320"
+              height="320"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=ironhack&t=&z=10&ie=UTF8&iwloc=&output=embed"
+              frameBorder="0"
+              scrolling="no"
+              marginHeight="0"
+              marginWidth="0"
+            ></iframe>
+            <a href="https://2yu.co">2yu</a>
+            <br />
+            <style>
+              {`.mapouter{position:relative;text-align:right;height:320px;width:320px;}`}
+            </style>
+            <a href="https://embedgooglemap.2yu.co">html embed google map</a>
+            <style>
+              {`.gmap_canvas{overflow:hidden;background:none!important;height:320px;width:320px;}`}
+            </style>
+          </div>
+        </div>
+        <div className="informations">
+          <p className="informationsP">R. do Instituto Virgílio Machado, 14</p>
+          <p className="informationsP">Lisboa, 1100-284</p>
+          <p className="informationsP">Monday - Friday</p>
+          <p className="informationsP">10:00am 6:00pm</p>
         </div>
       </div>
     </div>

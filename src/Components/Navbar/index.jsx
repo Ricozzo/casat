@@ -16,52 +16,45 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <a href="/">
+      <a href="/" className="logoNav">
         <img src={QueerLink} alt="Bootstrap" width="35" height="35" />
       </a>
-      <div>
-        <button
-          className={`menu-button ${showOptions ? "active" : ""}`}
-          onClick={handleToggleOptions}
-        >
-          Menu
-        </button>
-        <div className={`options ${showOptions ? "show" : ""}`}>
-          <Link to="/">
-            <button>Home</button>
-          </Link>
-          {isLoggedIn ? (
-            <>
-              <Link to="/depositions">
-                <button>Forum</button>
-              </Link>
-              <Link to="/events">
-                <button>Events</button>
-              </Link>
-
-              <button
-                onClick={() => {
-                  logoutUser();
-                  navigate("/");
-                }}
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link to="/login">
-                <button>Login</button>
-              </Link>
-              <Link to="/signup">
-                <button>Signup</button>
-              </Link>
-            </>
-          )}
-        </div>
+      <div className="options">
+        <Link to="/">
+          <button className="buttonNav">Home</button>
+        </Link>
+        {isLoggedIn ? (
+          <>
+            <Link to="/depositions">
+              <button className="buttonNav">Forum</button>
+            </Link>
+            <Link to="/events">
+              <button className="buttonNav">Events</button>
+            </Link>
+            <button
+              className="buttonNav"
+              onClick={() => {
+                logoutUser();
+                navigate("/");
+              }}
+            >
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/login">
+              <button className="buttonNav">Login</button>
+            </Link>
+            <Link to="/signup">
+              <button className="buttonNav">Signup</button>
+            </Link>
+          </>
+        )}
       </div>
     </nav>
   );
+
 }
 
 export default Navbar;
