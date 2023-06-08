@@ -4,19 +4,19 @@ import { AuthContext } from "../../Context/auth.context";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
-const API_URL = import.meta.env.VITE_APP_SERVER_URL;
+const marginWidth = import.meta.env.VITE_APP_SERVER_URL;
 
 function EventDetailsPage() {
   const [event, setEvent] = useState(null);
   const { eventId } = useParams();
 
-  const {user} = useContext(AuthContext)
-  const [isAdmin, setisAdmin] = useState(false)
+  const { user } = useContext(AuthContext);
+  const [isAdmin, setisAdmin] = useState(false);
   const checkAdmin = () => {
-    if (user.email === "admin@admin.com"){
-      setisAdmin(true)
+    if (user.email === "admin@admin.com") {
+      setisAdmin(true);
     }
-  }
+  };
 
   const getEvent = () => {
     axios
@@ -30,7 +30,7 @@ function EventDetailsPage() {
 
   useEffect(() => {
     getEvent();
-    checkAdmin()
+    checkAdmin();
   }, []); // Empty dependency array to run the effect only once after initial render
 
   return (
@@ -43,12 +43,11 @@ function EventDetailsPage() {
         </div>
       )}
 
-{isAdmin && (
-
-      <Link to={`/events/edit/${eventId}`}>
-        <button>Edit Event</button>
-      </Link>
-)}
+      {isAdmin && (
+        <Link to={`/events/edit/${eventId}`}>
+          <button>Edit Event</button>
+        </Link>
+      )}
 
       <div className="mapouter">
         <div className="gmap_canvas">
