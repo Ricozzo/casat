@@ -42,6 +42,8 @@ function EventsListPage() {
       <AddEvent getAllEvents={getAllEvents} />
     )}
     {/*------------------------*/}
+    <h1 className="eventsPagetitle">Events</h1>
+    <h2>Join Us</h2>
       <div className="event-card-container">
         {events.map((event) => (
           <div className="event-card" key={event._id}>
