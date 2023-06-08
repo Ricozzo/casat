@@ -36,9 +36,10 @@ function EventDetailsPage() {
   return (
     <div className="event-details">
       {event && (
-        <div>
-          <h1>{event.title}</h1>
+        <div className="perEvent">
+          <h1 className="titleEvent">{event.title}</h1>
           <p>{event.description}</p>
+          <p>{event.information}</p>
           <img src={event.imageUrl} alt={event.title} />
         </div>
       )}
@@ -48,30 +49,6 @@ function EventDetailsPage() {
           <button>Edit Event</button>
         </Link>
       )}
-
-      <div className="mapouter">
-        <div className="gmap_canvas">
-          <iframe
-            title="Google Map"
-            width="338"
-            height="338"
-            id="gmap_canvas"
-            src="https://maps.google.com/maps?q=ironhack&t=&z=16&ie=UTF8&iwloc=&output=embed"
-            frameBorder="0"
-            scrolling="no"
-            marginHeight="0"
-            marginWidth="0"
-          ></iframe>
-          <a href="https://2yu.co">2yu</a>
-          <br />
-          <style>
-            {`.mapouter{position:relative;text-align:right;height:338px;width:338px;}
-              .gmap_canvas{overflow:hidden;background:none!important;height:338px;width:338px;}`}
-          </style>
-          <a href="https://embedgooglemap.2yu.co">html embed google map</a>
-        </div>
-      </div>
-
       <Link to="/events">
         <button>Back to events</button>
       </Link>

@@ -52,7 +52,7 @@ function EventsListPage() {
                 </div>
                 <div className="event-details">
                   <h3 className="event-title">{event.title}</h3>
-                  <p className="event-description">{event.description}</p>
+                  {/* <p className="event-description">{event.description}</p> */}
                 </div>
               </div>
             </Link>

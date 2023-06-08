@@ -7,6 +7,7 @@ function AddEvent({ getAllEvents }) {
   const [description, setDescription] = useState("");
   const [uploading, setUploading] = useState(false);
   const [eventImage, seteventImage] = useState("");
+  const [information, setInformation] = useState("");
 
   const navigate = useNavigate();
 
@@ -34,6 +35,7 @@ function AddEvent({ getAllEvents }) {
       const body = {
         title,
         description,
+        information,
         imageUrl: eventImage,
       };
       await axios.post(
@@ -43,6 +45,7 @@ function AddEvent({ getAllEvents }) {
       getAllEvents();
       setTitle("");
       setDescription("");
+      setInformation("");
       seteventImage("");
     } catch (error) {
       console.log(error);
@@ -54,31 +57,40 @@ function AddEvent({ getAllEvents }) {
       <h3>Add Event</h3>
 
       <form onSubmit={handleSubmit}>
-        <label>Title:</label>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <label>Description:</label>
-        <textarea
-          type="text"
-          name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+        <div className="admAddEvent">
+          <label>Title:</label>
+          <input
+            type="text"
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <label>Description:</label>
+          <textarea
+            type="text"
+            name="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+          <label>Information:</label>
+          <textarea
+            type="text"
+            name="information"
+            value={information}
+            onChange={(e) => setInformation(e.target.value)}
+          />
 
-        <label>Image:</label>
-        <input
-          type="file"
-          onChange={(e) => handleImageChange(e)} // Chame a função handleImageChange para atualizar a imagem selecionada
-        />
-        {uploading ? (
-          <p>Image Uploading, please wait</p>
-        ) : (
-          <button type="submit">Submit</button>
-        )}
+          <label>Image:</label>
+          <input
+            type="file"
+            onChange={(e) => handleImageChange(e)} // Chame a função handleImageChange para atualizar a imagem selecionada
+          />
+          {uploading ? (
+            <p>Image Uploading, please wait</p>
+          ) : (
+            <button type="submit">Submit</button>
+          )}
+        </div>
       </form>
     </div>
   );

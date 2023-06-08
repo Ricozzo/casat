@@ -29,6 +29,7 @@ function EditEventPage() {
     // Write State 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const [information, setInformation] = useState("");
 
     // req.params => Express 
     // useParams() => ReactJS
@@ -44,6 +45,7 @@ function EditEventPage() {
             const oneEvent = response.data; 
             setTitle(oneEvent.title);
             setDescription(oneEvent.description);
+            setInformation(oneEvent.information);
         })
         .catch((error)=>{
             console.log(error)
@@ -58,7 +60,7 @@ function EditEventPage() {
 
         // store title, description that is going to be received
         // in ExpressJS as req.body.
-        const requestBody = {title, description};      
+        const requestBody = {title, description, information};      
 
         // make a PUT request to update the event
         axios.put(`${API_URL}/api/events/${eventId}`, requestBody )
@@ -83,29 +85,35 @@ function EditEventPage() {
 
   return (
     <div className="edit-event-page">
-    <h3>Edit the Event</h3>
+      <h3>Edit the Event</h3>
 
-    <form onSubmit={handleFormSubmit}>
-      <label>Title:</label>
-      <input
-        type="text"
-        name="title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      
-      <label>Description:</label>
-      <textarea
-        name="description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
+      <form onSubmit={handleFormSubmit}>
+        <label>Title:</label>
+        <input
+          type="text"
+          name="title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
 
-      <button type="submit">Edit</button>
-    </form>
-    <button onClick={deleteEvent}>Delete Event</button>
-  </div>    
-  )
+        <label>Description:</label>
+        <textarea
+          name="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <label>Information:</label>
+        <textarea
+          name="information"
+          value={information}
+          onChange={(e) => setInformation(e.target.value)}
+        />
+
+        <button type="submit">Edit</button>
+      </form>
+      <button onClick={deleteEvent}>Delete Event</button>
+    </div>
+  );
 }
 
 export default EditEventPage
