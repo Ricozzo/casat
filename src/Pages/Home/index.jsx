@@ -1,6 +1,6 @@
 import { Carousel } from "react-bootstrap";
 import circuloOne from "../../assets/circulo1.jpg";
-import circuloTwo from "../../assets/circulo2.jpg";
+import circuloTwo from "../../assets/circulo2.png";
 
 function HomePage() {
   return (
