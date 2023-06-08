@@ -33,7 +33,7 @@ function Navbar() {
           {isLoggedIn ? (
             <>
               <Link to="/depositions">
-                <button>Depositions</button>
+                <button>Forum</button>
               </Link>
               <Link to="/events">
                 <button>Events</button>

@@ -3,7 +3,7 @@ import instaLogo from "../../assets/insta.png";
 import faceLogo from "../../assets/facebook.png";
 
 const Footer = () => {
-  const [showFooter, setShowFooter] = useState(false);
+  /* const [showFooter, setShowFooter] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +22,7 @@ const Footer = () => {
   if (!showFooter) {
     return null;
   }
-
+ */
   return (
     <footer className="footer">
       <p>Social Medias</p>

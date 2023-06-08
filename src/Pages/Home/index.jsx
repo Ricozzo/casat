@@ -6,8 +6,10 @@ function HomePage() {
   return (
     <div>
       <div>
-        <h1>QueerLink</h1>
-        <h3>Connecting Queer Communities</h3>
+        <div className="backgroundtop">
+          <h1>QueerLink</h1>
+          <h3>Connecting Queer Communities</h3>
+        </div>
         <div className="bordersPage">
           <p>
             QueerLink is a dynamic and inclusive LGBTQ+ organization that aims
@@ -15,23 +17,31 @@ function HomePage() {
             primary focus is to provide valuable information and resources
             related to exams, queer events, and LGBTQ+ history.
           </p>
-        <div className="carousel">
-          <Carousel style={{ marginWidth: "50%" }} interval={2000}>
-            <Carousel.Item>
-              <img className="d-block w-100" src={marshaP} alt="First slide" />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={marshaP3}
-                alt="Second slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img className="d-block w-100" src={marshaP} alt="Third slide" />
-            </Carousel.Item>
-          </Carousel>
-        </div>
+          <div className="carousel">
+            <Carousel style={{ marginWidth: "50%" }} interval={2000}>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={marshaP}
+                  alt="First slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={marshaP3}
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={marshaP}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+            </Carousel>
+          </div>
           <p>
             At QueerLink, we recognize the unique challenges faced by queer
             individuals in navigating academic pursuits, including exams, and we

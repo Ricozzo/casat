@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 import AddEvent from "../AddEvent";
 
-const API_URL = "http://localhost:5005";
+const API_URL = import.meta.env.VITE_APP_SERVER_URL;
 
 function EventsListPage() {
   const [events, setEvents] = useState([]);
